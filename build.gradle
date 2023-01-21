@@ -13,8 +13,13 @@ repositories {
 
 
 
+project.ext.lwjglVersion = "3.3.2-SNAPSHOT"
+project.ext.jomlVersion = "1.10.5"
+project.ext.lwjglNatives = "natives-windows"
+
+
 dependencies {
-    implementation platform("org.lwjgl:lwjgl-bom:3.3.2-SNAPSHOT")
+    implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
 
     implementation "org.lwjgl:lwjgl"
     implementation "org.lwjgl:lwjgl-assimp"
@@ -27,17 +32,17 @@ dependencies {
     implementation "org.lwjgl:lwjgl-par"
     implementation "org.lwjgl:lwjgl-stb"
     implementation "org.lwjgl:lwjgl-vulkan"
-    runtimeOnly "org.lwjgl:lwjgl::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-assimp::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-bgfx::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-glfw::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-nanovg::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-nuklear::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-openal::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-opengl::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-par::natives-linux"
-    runtimeOnly "org.lwjgl:lwjgl-stb::natives-linux"
-    implementation "org.joml:joml:1.10.5"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-assimp::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-bgfx::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-nanovg::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-nuklear::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-par::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    implementation "org.joml:joml:${jomlVersion}"
 }
 
 
